@@ -91,7 +91,7 @@ namespace App_Controle_Dengue_V2.Controllers
                 // Credencial para envio por SMTP Seguro (Quando o servidor exige autenticação)
                 _smtpClient.UseDefaultCredentials = false;
 
-                _smtpClient.Credentials = new NetworkCredential("email", "senha");
+                _smtpClient.Credentials = new NetworkCredential("email", "senh");
 
                 _smtpClient.EnableSsl = true;
 
