@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Controle de Dengue</h1>
+    <p class="lead">Aplicativo Desenvolvido para auxiliar no controle de dengue e oferecer informações! </p>
+    <p class="lead">Faça seu cadastro ou realize seu Login para começar a ajudar!</p>
+    <p>
+        <a> @Html.ActionLink("Cadastrar", "CadastrarUsuario", "Usuario", null, new { @class = "btn btn-primary btn-lg" })</a>
+        <a> @Html.ActionLink("Login", "Login", "Home", null, new { @class = "btn btn-primary btn-lg" })</a>
+    </p>
+
+</div>

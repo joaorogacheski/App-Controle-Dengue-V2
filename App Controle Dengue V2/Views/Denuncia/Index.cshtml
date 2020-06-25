@@ -1,0 +1,68 @@
+﻿@model List<App_Controle_Dengue_V2.Models.FocoDengue>
+
+
+
+@* Bloco de código em # *@
+
+<h1>@ViewBag.FocoDengue</h1>
+<h1>Denuncias</h1>
+
+@{
+    int available = 0;
+}
+
+@Html.ActionLink("Denunciar Foco", "DenunciarFoco", "Denuncia", new { @class = "btn btn-warning" })
+
+<br />
+
+<br />
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Bairro</th>
+        <th>Logradouro</th>
+        <th>Descrição</th>
+        <th>Doentes</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (App_Controle_Dengue_V2.Models.FocoDengue foco in Model)
+    {
+        <tr>
+            <td>@foco.Bairro</td>
+            <td>@foco.Endereco</td>
+            <td>@foco.Descricao</td>
+            <td>@foco.Doentes</td>
+
+            <td>
+                @Html.ActionLink("Foco Contido", "RemoverFoco", "Denuncia",
+                    new { id = foco.FocoId },
+                    new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+
+        available++;
+
+    }
+
+
+</table>
+
+
+
+
+<br />
+@using (Html.BeginForm("EnviaEmail", "Home", FormMethod.Post))
+{
+    if (@available > 5)
+    {
+        <h>Ajude divulgando via e-mail encaminhando as autoridades e interessados</h>
+        <br />
+        <div>
+            <div>
+                @Html.TextBox("txtEmail", "", new { @class = "form-control" })
+            </div>
+            <br />
+            <button class="btn btn-success">Enviar Email</button>
+        </div>
+    }
+}

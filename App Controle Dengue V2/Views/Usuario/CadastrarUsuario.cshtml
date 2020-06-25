@@ -1,0 +1,76 @@
+﻿@using (Html.BeginForm("CadastrarUsuario", "Usuario", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+
+ 
+    <br>
+    <fieldset>
+        <legend>Cadastrar Usuario</legend>
+
+        <div id="NomeUsuario" class="form-group">
+            @Html.Label("Nome de Usuario", "Nome de Usuario", new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.TextBox("txtNomeUsuario", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+
+        <div id="Senha" class="form-group">
+            @Html.Label("Senha", "Senha", new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.Password("txtSenha", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+
+        <div id="SenhaConfirm" class="form-group">
+            @Html.Label("Confirme sua Senha", "Confirme sua Senha", new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.Password("txtSenhaConfirm", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+
+        <div id="CPF" class="form-group">
+            @Html.Label("CPF", "CPF", new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.TextBox("txtCPF", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div id="Telefone" class="form-group">
+            @Html.Label("Telefone", "Telefone", new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.TextBox("txtTelefone", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div id="Idade" class="form-group">
+            @Html.Label("Idade", "Idade", new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.TextBox("txtIdade", "", new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div id="Data Nascimento" class="form-group">
+            @Html.Label("DataNascimento", "DataNascimento", new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.TextBox("txtDataNascimento", "", new { @type = "date", @class = "datepicker" })
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input class="btn btn-primary" type="submit" value="Cadastrar" />
+            </div>
+        </div>
+    </fieldset>
+
+
+}
+
